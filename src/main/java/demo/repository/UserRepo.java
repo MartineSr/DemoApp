@@ -7,6 +7,4 @@ import org.springframework.stereotype.Component;
 @Component
 public interface UserRepo extends CrudRepository<User,Integer> {
 
-    User findById(int userID);
-
 }

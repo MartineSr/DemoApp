@@ -1,5 +1,6 @@
 package demo.model;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Component;
 
@@ -12,9 +13,11 @@ public class User {
 
     @Id
     @NonNull
+    @Column
     private Integer userID;
-
+    @Column
     private String firstName;
+    @Column
     private String lastName;
 
     public Integer getUserID(){

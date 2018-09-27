@@ -9,12 +9,13 @@ public class UserService{
 
     private UserRepo userRepo;
 
-    public User getUserById(int userID){
-        return userRepo.findById(userID);
-    }
+    private User user1 = new User();
 
-    public Iterable<User> showAll(){
-        return userRepo.findAll();
+
+    public User showUser1(){
+        user1.setFirstName("Klaas");
+        user1.setLastName("Hein");
+        return user1;
     }
 
 }

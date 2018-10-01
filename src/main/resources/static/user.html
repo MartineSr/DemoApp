@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DemoUserPagina</title>
+</head>
+<body>
+<h1>
+    DemoUserPagina
+</h1>
+<div id="showUser1">
+    <button onclick="getUser1()">Show user1</button>
+</div>
+<div id="showAllUsers">
+    <button onclick="showUsers()">Show all Users.</button>
+</div>
+
+<script>
+    function getUser1() {
+        var xhttp = new XMLHttpRequest();
+        var url = "/user";
+        xhttp.onreadystatechange = function(){
+            if(this.readyState === 4 && this.status === 200){
+                document.getElementById("showUser1").innerHTML = xhttp.responseText;
+            }
+        }
+        xhttp.open("GET", url, true);
+        xhttp.send();
+    }
+
+    function showUsers(){
+        var xhttp = new XMLHttpRequest();
+        var url = "/allUsers";
+        xhttp.onreadystatechange = function(){
+            if(this.readyState === 4 && this.status === 200){
+                document.getElementById("showAllUsers").innerHTML = xhttp.responseText;
+            }
+            else{console.log("Helaas werkt het niet");}
+        }
+        xhttp.open("GET", url, true);
+        xhttp.send();
+    }
+</script>
+</body>
+</html>

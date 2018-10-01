@@ -1,6 +1,5 @@
-package demo.model;
+package demo.app.model;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Component;
 

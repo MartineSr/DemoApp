@@ -1,8 +1,8 @@
-package demo.controller;
+package demo.app.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import demo.model.Demo;
+import demo.app.model.Demo;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.ResponseBody;
 

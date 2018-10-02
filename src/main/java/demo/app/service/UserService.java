@@ -12,13 +12,13 @@ import java.util.List;
 @Transactional
 public class UserService{
 
-    private final UserRepo userRepo;
+    private final UserRepoImpl userRepoImpl;
 
     private User user1 = new User();
 
     @Autowired
-    public UserService(UserRepo userRepo) {
-        this.userRepo = userRepo;
+    public UserService(UserRepoImpl userRepoImpl) {
+        this.userRepoImpl = userRepoImpl;
     }
 
     public User showUser1(){
@@ -27,9 +27,8 @@ public class UserService{
         return user1;
     }
 
-    public List<Object> getAllUsers(){
-        ArrayList<Object> users = new ArrayList<>();
-        userRepo.findAll().forEach(e -> users.add(e));
+    public List<User> getAllUsers(){
+        List<User> users = userRepoImpl.findAll();
         return users;
     }
 

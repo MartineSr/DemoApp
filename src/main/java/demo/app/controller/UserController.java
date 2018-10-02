@@ -27,9 +27,9 @@ public class UserController {
 
     @GetMapping("/allUsers")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getUsers() {
-        List<Object> u = userService.getAllUsers();
-        return Response.ok(u).build();
+    public List<User> getUsers() {
+        List<User> u = userService.getAllUsers();
+        return u;
     }
 }
 

@@ -1,60 +1,68 @@
 package demo.app.service;
 
 import demo.app.model.User;
+import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+import java.util.concurrent.ConcurrentHashMap;
 
+@Component
 public class UserRepoImpl implements UserRepo {
-    @Override
-    public Object save(Object o) {
+
+    private final Map<String, User> userMap = new ConcurrentHashMap<>();
+
+    public Object save(Object entity) {
         return null;
     }
 
-    @Override
-    public Iterable saveAll(Iterable iterable) {
+    public Iterable saveAll(Iterable entities) {
         return null;
     }
 
-    @Override
     public Optional findById(Object o) {
         return Optional.empty();
     }
 
-    @Override
     public boolean existsById(Object o) {
         return false;
     }
 
-    @Override
-    public Iterable<User> findAll() {
-        return null;
+    public List<User> findAll() {
+        List<User> u = new ArrayList<>();
+        User user1 = new User();
+        user1.setFirstName("Piet");
+        user1.setLastName("Demo");
+        u.add(user1);
+        User user2 = new User();
+        user2.setFirstName("Piet");
+        user2.setLastName("Demo2");
+        u.add(user2);
+        return u;
     }
 
-    @Override
     public Iterable findAllById(Iterable iterable) {
         return null;
     }
 
-    @Override
     public long count() {
         return 0;
     }
 
-    @Override
     public void deleteById(Object o) {
 
     }
 
-    @Override
-    public void delete(Object o) {
+    public void delete(Object entity) {
 
     }
 
-    @Override
-    public void deleteAll(Iterable iterable) {
+    public void deleteAll(Iterable entities) {
 
     }
 
-    @Override
     public void deleteAll() {
 
     }

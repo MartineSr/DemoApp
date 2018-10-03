@@ -1,11 +1,11 @@
 package demo.app.service;
 
 import demo.app.model.User;
+import demo.app.repository.UserRepoImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -28,7 +28,7 @@ public class UserService{
     }
 
     public List<User> getAllUsers(){
-        List<User> users = userRepoImpl.findAll();
+        List<User> users = userRepoImpl.findAllUsers();
         return users;
     }
 

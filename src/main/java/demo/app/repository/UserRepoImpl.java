@@ -1,12 +1,11 @@
-package demo.app.service;
+package demo.app.repository;
 
 import demo.app.model.User;
+import demo.app.repository.UserRepo;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Component
@@ -31,16 +30,7 @@ public class UserRepoImpl implements UserRepo {
     }
 
     public List<User> findAll() {
-        List<User> u = new ArrayList<>();
-        User user1 = new User();
-        user1.setFirstName("Piet");
-        user1.setLastName("Demo");
-        u.add(user1);
-        User user2 = new User();
-        user2.setFirstName("Piet");
-        user2.setLastName("Demo2");
-        u.add(user2);
-        return u;
+        return new ArrayList<>(userMap.values());
     }
 
     public Iterable findAllById(Iterable iterable) {
@@ -65,5 +55,10 @@ public class UserRepoImpl implements UserRepo {
 
     public void deleteAll() {
 
+    }
+
+    @Override
+    public List<User> findAllUsers() {
+        return new ArrayList<>(userMap.values());
     }
 }

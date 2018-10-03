@@ -4,11 +4,12 @@ import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Component
 @Entity
 @Table(name="user")
-public class User {
+public class User implements Serializable {
 
     @Id
     @NonNull
